@@ -1,0 +1,72 @@
+  <link rel="stylesheet" href="/styles/userlogin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<a href="/admin/signin"><div class="role">Admin
+  <i class="fa-regular fa-user"></i>
+</div></a>
+<div class="glass-container">
+  <div class="login-box">
+    <h2>Sign in</h2>
+    <form id="signin" onsubmit="return formvalidate(event)" action="/user/signin" method="POST">
+
+      <input type="text" id="email" name="email" placeholder="Email" />
+
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
+
+      <div class="options">
+        <h3 class="warning">{{msg}}</h3>
+      </div>
+
+      <button type="submit">Sign in</button>
+
+      <p>Don't have an account? <a href="/user/signup" id="register">Register</a></p>
+    </form>
+  </div>
+</div>
+
+<script>
+
+  function formvalidate(e) {
+    // Prevent form submission for validation checks
+    e.preventDefault();
+
+    var email = document.getElementById("email").value.trim();
+    var password = document.getElementById("password").value.trim();
+
+ 
+    // Check if any field is empty
+    if (email === "" || password === "") {
+      swal("All fields are required");
+      return false; // Stop form submission
+    }
+
+    // Validate email format
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      swal("Please enter a valid email address");
+      return false; // Stop form submission
+    }
+
+    // Check password length
+    if (password.length < 6) {
+      swal("Password must be at least 6 characters long");
+      return false; // Stop form submission
+    }
+
+    // If all validations pass, submit the form
+    document.getElementById("signin").submit(); // Explicitly submit the form
+  }
+
+
+ const msg = "{{{message}}}";  <!-- Use triple curly braces -->
+  if (msg) {
+    swal(msg);
+  }
+    
+    
+</script>

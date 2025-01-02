@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.role {
+    position: absolute; /* Position it relative to the window */
+    top: 2%; /* Adjust the distance from the top */
+    right: 2%; /* Adjust the distance from the right */
+    font-size: 24px; /* Adjust icon size */
+    color: #fff; /* Set icon color to match your design */
+    z-index: 1000; /* Ensure it appears above other elements */
+    cursor: pointer;
+}
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../utils/bg.jpg');
+    background-size: cover;
+}
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@300&display=swap');
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.warning {
+    color: red;
+    font-weight: 300; /* Slim text */
+    font-family: 'Proxima Nova', sans-serif; /* Zomato's font family */
+    font-size: 1.5em;
+}
+.glass-container {
+    width: 300px;
+    height: 350px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.glass-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.login-box {
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 13px;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 12px;
+    color: white;
+}
+
+.options input {
+    margin-right: 5px;
+    margin-top: 0px;
+}
+
+.options a {
+    text-decoration: none;
+    color: white;
+    margin-left: auto;
+}
+
+button {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
+}
+
+p {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 15px;
+}
+
+#register {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}

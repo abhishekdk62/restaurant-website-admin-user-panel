@@ -1,0 +1,37 @@
+  <link rel="stylesheet" href="/styles/userlogin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<a href="/user/signin"><div class="role">User
+  <i class="fa-regular fa-user"></i>
+</div></a>
+<div class="glass-container">
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <form action="/admin/signin" method="POST">
+
+      <input type="text" id="email" name="email" placeholder="Email" />
+
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
+
+      <div class="options">
+        <h3 class="warning">{{msg}}</h3>
+      </div>
+
+      <button type="submit">Sign in</button>
+
+    </form>
+  </div>
+</div>
+
+<script>
+  
+ const msg = "{{{message}}}";  <!-- Use triple curly braces -->
+  if (msg) {
+    swal(msg);
+  }
+    
+</script>
